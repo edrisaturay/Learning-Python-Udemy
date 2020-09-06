@@ -29,12 +29,31 @@ print(player1.name)
 class Cat: 
     species = 'mammal'
     def __init__(self, name, age):
-        self.name = name
-        self.age = age
+        self._name = name
+        self._age = age
+        
+    @classmethod
+    def adding_things(cls, a, b): 
+        return cls('Teddy', 2,3)
+    
+    @staticmethod 
+    def addingNumbers(a, b): 
+        return a+b
+    
+    def run(self): 
+        return self
+    
+    def speak(self):
+        print(f'My name is {self.name}, and i am {self.age} years old')
+    
+    
         
 cat1 = Cat('Garfield', '2')
 cat2 = Cat('Puss', '3')
 cat3 = Cat('Lofy', '1')
+
+
+print(cat1.speak())
 
 def findOldestCat(*args):
     return max(args)
